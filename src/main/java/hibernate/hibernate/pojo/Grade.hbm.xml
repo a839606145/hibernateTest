@@ -1,0 +1,15 @@
+<hibernate-mapping package="hibernate.hibernate.pojo">
+    <class name="Grade" table="grade">
+        <id name="id" type="java.lang.Integer">
+            <column name="gradeId" />
+            <generator class="native" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="name" />
+        </property>
+        <set name="classes"  inverse="true" lazy="true" fetch="join">
+            <key column="gradeId"></key>
+            <one-to-many class="Classes"/>
+        </set>
+    </class>
+</hibernate-mapping>

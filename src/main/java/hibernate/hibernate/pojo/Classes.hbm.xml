@@ -1,0 +1,13 @@
+<hibernate-mapping package="hibernate.hibernate.pojo">
+    <class name="Classes" table="class">
+        <id name="id" type="java.lang.Integer">
+            <column name="classId" />
+            <generator class="native" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="name" />
+        </property>
+        <many-to-one name="grade" class="Grade" cascade="all" column="gradeId">
+        </many-to-one>
+    </class>
+</hibernate-mapping>
